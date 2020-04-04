@@ -13,3 +13,5 @@
 **[M.372. super-pow](./LeetCode/372.md)**
 
 **[E.1184. distance-between-bus-stops](./LeetCode/1184.md)**
+
+**[M.1283. find-the-smallest-divisor-given-a-threshold](./LeetCode/1283.md)**
