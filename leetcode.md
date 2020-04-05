@@ -23,3 +23,5 @@
 **[M.162. find-peak-element](./LeetCode/162.md)**
 
 **[E.637. average-of-levels-in-binary-tree](./LeetCode/637.md)**
+
+**[M.1310. xor-queries-of-a-subarray](./LeetCode/1310.md)**
