@@ -19,3 +19,5 @@
 **[E.01.09. string-rotation-lcci](./LeetCode/01.09.md)**
 
 **[M.1315. sum-of-nodes-with-even-valued-grandparent](./LeetCode/1315.md)**
+
+**[M.162. find-peak-element](./LeetCode/162.md)**
