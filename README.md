@@ -1,6 +1,6 @@
 
 # HAHAWS
 
-[Leetcode](./leetcode)
+[Leetcode](./leetcode.md)
 
-[C++](./Cpp)
+[C++](./cpp.md)
