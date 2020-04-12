@@ -21,67 +21,67 @@ set CMDER_ROOT=D:\cmder             # cmder目录
 
 在原版上修改如下(最好使用vscode修改, 会有详细的提示, 并且修改颜色时会有调色板)
 
-```json
+```
 
-// To view the default settings, hold "alt" while clicking on the "Settings" button.
-// For documentation on these settings, see: https://aka.ms/terminal-documentation
+    // To view the default settings, hold "alt" while clicking on the "Settings" button.
+    // For documentation on these settings, see: https://aka.ms/terminal-documentation
 
-{
-    "$schema": "https://aka.ms/terminal-profiles-schema",
-
-    // 默认打开的guid
-    "defaultProfile": "{94a870f3-f4f8-43af-be6b-91fdcc343523}",
-
-    "profiles":
     {
-        "defaults":
+        "$schema": "https://aka.ms/terminal-profiles-schema",
+
+        // 默认打开的guid
+        "defaultProfile": "{94a870f3-f4f8-43af-be6b-91fdcc343523}",
+
+        "profiles":
         {
-            // 初始打开的文件夹, 表示是当前目录
-            "startingDirectory": "."
-            // Put settings here that you want to apply to all profiles
+            "defaults":
+            {
+                // 初始打开的文件夹, 表示是当前目录
+                "startingDirectory": "."
+                // Put settings here that you want to apply to all profiles
+            },
+            "list":
+            [
+                {   // 自定义的
+                    // guid 直接在网上一个网站生成,因为它本身就是全球唯一的
+                    "guid": "{94a870f3-f4f8-43af-be6b-91fdcc343523}",
+                    "name": "Cmder",
+                    "commandline" : "cmd.exe /k \"D:/cmder/vendor/cmd_init.bat\"",  // 后面的目录是之前写的cmd_init.bat的目录
+                    "icon" : "D:\\cmder\\icons\\cmder.ico"
+                },
+                {
+                    // Make changes here to the powershell.exe profile
+                    "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                    "name": "Windows PowerShell",
+                    "commandline": "powershell.exe",
+                    "hidden": false,
+                    "foreground": "#eeeeee",    // 颜色
+                    "background": "#000000",
+                    "cursorShape": "filledBox"  // 光标类型
+                },
+                {
+                    // Make changes here to the cmd.exe profile
+                    "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                    "name": "cmd",
+                    "commandline": "cmd.exe",
+                    "hidden": false
+                },
+                {
+                    "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                    "hidden": true,             // hidden=true表示不显示这个
+                    "name": "Azure Cloud Shell",
+                    "source": "Windows.Terminal.Azure"
+                }
+            ]
         },
-        "list":
-        [
-            {   // 自定义的
-                // guid 直接在网上一个网站生成,因为它本身就是全球唯一的
-                "guid": "{94a870f3-f4f8-43af-be6b-91fdcc343523}",
-                "name": "Cmder",
-                "commandline" : "cmd.exe /k \"D:/cmder/vendor/cmd_init.bat\"",  // 后面的目录是之前写的cmd_init.bat的目录
-                "icon" : "D:\\cmder\\icons\\cmder.ico"
-            },
-            {
-                // Make changes here to the powershell.exe profile
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "Windows PowerShell",
-                "commandline": "powershell.exe",
-                "hidden": false,
-                "foreground": "#eeeeee",    // 颜色
-                "background": "#000000",
-                "cursorShape": "filledBox"  // 光标类型
-            },
-            {
-                // Make changes here to the cmd.exe profile
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "cmd",
-                "commandline": "cmd.exe",
-                "hidden": false
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,             // hidden=true表示不显示这个
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            }
-        ]
-    },
 
-    // Add custom color schemes to this array
-    "schemes": [],
+        // Add custom color schemes to this array
+        "schemes": [],
 
-    // Add any keybinding overrides to this array.
-    // To unbind a default keybinding, set the command to "unbound"
-    "keybindings": []
-}
+        // Add any keybinding overrides to this array.
+        // To unbind a default keybinding, set the command to "unbound"
+        "keybindings": []
+    }
 
 ```
 
