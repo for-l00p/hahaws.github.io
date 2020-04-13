@@ -11,6 +11,8 @@ h | 光标左移
 j | 光标下移
 k | 光标上移
 l | 光标右移
+
+
 &lt;Esc&gt; | 回到normal模式
 i | 在光标当前插入，insert
 a | 在光标后插入，append
