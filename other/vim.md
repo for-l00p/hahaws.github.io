@@ -65,4 +65,116 @@ s表示当前行替换, %s表示全部行
 
 ```
 
+## vimrc设置示例
 
+```vim
+
+" 设置行号
+set nu | set number
+
+" 取消行号
+set nonu | set nonumber
+
+" 开启语法高亮 
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
+" 多编码支持，解决中文乱码
+if has('multi_byte')
+    set encoding=utf-8
+    set fileencoding=utf-8
+    set fileencodings=utf-8,ucs-bom,gbk,gb18030,big5,euc-jp,latin1
+endif
+
+" 设定配色方案
+colorscheme gruvbox
+
+" 高亮匹配括号
+set showmatch
+
+" 在normal模式下输入命令时补全
+set wildmenu
+
+" 以什么形式读档就以什么形式存档，因为dos是回车符+换行符
+set ffs=unix,dos,mac
+
+" 以unix形式存档, 行尾只有换行符
+set ff=unix
+
+" 文件类型检测功能
+filetype on 
+filetype plugin on          " 有些插件会根据文件类型选择是否开启
+filetype indent on          " vim安装目录indent目录有关于不同文件类型的缩进
+filetype plugin indent on   " 以上三行合并
+
+" 在编辑模式下使用 >> 或 << 移动的空白位的长度
+
+set shiftwidth=4
+" 将tab所占的空白位用空格填充
+set expandtab
+" 将tab等价位空格
+set tabstop=4
+" 在插入模式下按下tab键产生的空白的长度
+set softtabstop=4
+" 自动缩进(保持与上行一样的缩进)
+set autoindent
+
+" 通常这几个连用
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+set autoindent
+
+" 突出显示当前行
+set cursorline
+
+" 突出当前行的形式
+hi CursorLine term=bold cterm=bold ctermbg=237
+
+" 设置状态栏格式
+set laststatus=2
+set statusline=%<%f
+set statusline+=%w%h%m%r
+set statusline+=\ %{getcwd()}
+set statusline+=\ [%{&ff}:%{&fenc}:%Y]
+set statusline+=%=%{GetMode()}\ \ %-10.(%l,%c%V%)\ %-6.(%p%%\%)
+func GetMode()
+    if mode() == 'i'
+        return "INSERT"
+    elseif mode() == 'n'
+        return "NORMAL"
+    elseif mode() == 'v'
+        return "VISUAL"
+    else
+        return mode()
+    endif
+endfunction
+
+" 设置刷新时间(毫秒)
+set timeoutlen=50
+
+" 背景使用黑色
+set background=back
+
+" 不要备份文件（否则会出现~文件）
+set nobackup
+set nowritebackup
+
+" 不用交换文件
+set noswapfile
+
+" 启用鼠标
+if has("mouse")
+    set mouse=a     " 开启所有模式的鼠标支持
+endif
+
+" 高亮不想要的空格 比如行尾
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches() " for performance
+```

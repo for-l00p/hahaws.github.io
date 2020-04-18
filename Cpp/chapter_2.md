@@ -307,3 +307,52 @@ extern const int buffsize;  // 与file_1.cc中定义的是同一个对象
 > 如果想要在多个文件中共享同一个const对象, 那么必须在变量的定义之前添加`extern`关键字
 
 ### const的引用
+
+
+### const和constexpr的区别
+
+constexpr修饰的是编译期常量，const只是运行期常量
+
+```cpp
+const int a = 10;       // 常量，编译时确定值
+const int b = a + 1;    // 常量，编译时确定值
+const int c = func()    // 不是常量，具体值由func确定，但是初始化之后无法修改，
+                        // 即在运行时确定
+constexpr int d = func() // 常量，func返回值必须是在编译器就能确定的值
+```
+
+decltype是一个函数 返回值是类型
+
+```cpp
+int a = 10;
+decltype(a); // 返回int类型
+decltype(a) b = 20;  // 可以用来定义变量
+```
+
+尾后迭代器(指针)是最后一个元素后一个元素, 表示不存在此值
+
+```cpp
+ vector<int> nums = {1, 2, 3, 4, 5};
+for (auto beg = nums.begin(); beg != nums.end(); ++beg)
+{
+    cout << *beg << endl;
+}
+constexpr int size = 5;
+int arr[size] = {1, 2, 3, 4, 5};
+for (int *i = arr; i != &arr[size]; ++i)
+{
+    cout << *i << endl;
+}
+```
+
+c++11新标准, 可以对数组使用begin, end 函数返回数组头指针和数组尾指针
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5,6};
+int *beg = begin(arr);
+int *ed = end(arr);         // end是函数名, 避免同名
+while (beg != ed)
+{
+    cout << *beg++ << " ";
+}
+```
