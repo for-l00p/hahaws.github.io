@@ -321,6 +321,7 @@ const int c = func()    // 不是常量，具体值由func确定，但是初始�
 constexpr int d = func() // 常量，func返回值必须是在编译器就能确定的值
 ```
 
+
 decltype是一个函数 返回值是类型
 
 ```cpp
@@ -354,5 +355,61 @@ int *ed = end(arr);         // end是函数名, 避免同名
 while (beg != ed)
 {
     cout << *beg++ << " ";
+}
+```
+
+## 多维数组的遍历
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    constexpr size_t rowCnt = 3, colCnt = 4;
+    int ia[rowCnt][colCnt];
+    for (size_t i = 0; i < rowCnt; ++i)
+    {
+        for (size_t j = 0; j < colCnt; ++j)
+        {
+            ia[i][j] = i * colCnt + j;
+        }
+    }
+
+    cout << "Edition 1" << endl;
+
+    for (int (&row)[4] : ia)
+    {
+        for (int n: row)
+        {
+            cout << n << " ";
+        }
+        cout << endl;
+    }
+
+    cout << endl << "Edition 2" << endl;
+
+    for (int i = 0; i < rowCnt; ++i)
+    {
+        for (int j = 0; j < colCnt; ++j)
+        {
+            cout << ia[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << endl << "Edition 3" << endl;
+
+    for (int (*beg)[4] = ia; beg != ia + rowCnt; ++beg)
+    {
+        for (int *p = *beg; p != *beg + colCnt; ++p)
+        {
+            cout << *p << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
 ```
