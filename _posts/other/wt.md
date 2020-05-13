@@ -1,0 +1,105 @@
+
+# Windows Terminal
+
+## 安装
+
+在Microsoft Store中搜索安装
+
+## 优化
+
+1. 安装[cmder](https://cmder.net/)
+
+2. 新建一个文件**cmd_init.bat**, 内容如下
+
+```
+@echo off                           # 关掉输出
+set CMDER_ROOT=D:\cmder             # cmder目录
+"%CMDER_ROOT%\\vendor\\init.bat"    # 执行init.bat文件
+```
+
+3. 修改Windows profiles.json文件
+
+在原版上修改如下(最好使用vscode修改, 会有详细的提示, 并且修改颜色时会有调色板)
+
+```
+
+    // To view the default settings, hold "alt" while clicking on the "Settings" button.
+    // For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+    {
+        "$schema": "https://aka.ms/terminal-profiles-schema",
+
+        // 默认打开的guid
+        "defaultProfile": "{94a870f3-f4f8-43af-be6b-91fdcc343523}",
+
+        "profiles":
+        {
+            "defaults":
+            {
+                // 初始打开的文件夹, 表示是当前目录
+                "startingDirectory": "."
+                // Put settings here that you want to apply to all profiles
+            },
+            "list":
+            [
+                {   // 自定义的
+                    // guid 直接在网上一个网站生成,因为它本身就是全球唯一的
+                    "guid": "{94a870f3-f4f8-43af-be6b-91fdcc343523}",
+                    "name": "Cmder",
+                    "commandline" : "cmd.exe /k \"D:/cmder/vendor/cmd_init.bat\"",  // 后面的目录是之前写的cmd_init.bat的目录
+                    "icon" : "D:\\cmder\\icons\\cmder.ico"
+                },
+                {
+                    // Make changes here to the powershell.exe profile
+                    "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                    "name": "Windows PowerShell",
+                    "commandline": "powershell.exe",
+                    "hidden": false,
+                    "foreground": "#eeeeee",    // 颜色
+                    "background": "#000000",
+                    "cursorShape": "filledBox"  // 光标类型
+                },
+                {
+                    // Make changes here to the cmd.exe profile
+                    "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                    "name": "cmd",
+                    "commandline": "cmd.exe",
+                    "hidden": false
+                },
+                {
+                    "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                    "hidden": true,             // hidden=true表示不显示这个
+                    "name": "Azure Cloud Shell",
+                    "source": "Windows.Terminal.Azure"
+                }
+            ]
+        },
+
+        // Add custom color schemes to this array
+        "schemes": [],
+
+        // Add any keybinding overrides to this array.
+        // To unbind a default keybinding, set the command to "unbound"
+        "keybindings": []
+    }
+
+```
+
+4. 将Windows Terminal添加到右键菜单
+
+编辑一个注册表文件(以reg为后缀)
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]
+@="Windows Terminal here"
+"Icon"="D:\\cmder\\icons\\terminal.ico"     // 直接github上找 terminal仓库里有
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]
+// Windows Terminal执行文件, 不确定的话可以先自己在资源管理器里找一下
+// 如果是自己编译的可能是wtd.exe
+@="C:\\Users\\you_user\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe"
+```
+
+运行该文件即可
