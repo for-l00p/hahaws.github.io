@@ -59,11 +59,6 @@
 .codehilite .vi { color: #008080 } /* Name.Variable.Instance */
 .codehilite .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-作者：kun huang
-链接：https://www.zhihu.com/question/37544467/answer/74524133
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 .highlight {
 margin-bottom: 1.5em;
 @include font(12);
