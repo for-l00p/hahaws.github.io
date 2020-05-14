@@ -1,4 +1,10 @@
-# 二分搜索
+---
+layout: default
+title: 二分搜索(binary search)
+tags: Algorithm
+---
+
+# 二分搜索(binary search)
 
 二分搜索（binary search），也称折半搜索（half-interval search）、对数搜索（logarithmic search），是一种在有序数组中查找某一特定元素的搜索算法
 

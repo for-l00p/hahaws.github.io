@@ -1,0 +1,10 @@
+---
+layout: default
+title: Algorithm
+---
+<h2>Algorithm</h2>
+<ul>
+  {% for post in site.tags.Algorithm %}
+    <li><a href="{{site.url}}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>

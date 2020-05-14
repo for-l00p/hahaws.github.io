@@ -1,3 +1,9 @@
+---
+layout: default
+title: 摩尔投票算法 (Boyer-Moore majority vote algorithm)
+tags: Algorithm
+---
+
 # 摩尔投票算法 (Boyer-Moore majority vote algorithm)
 
 摩尔投票算法的目的是从一组数中查找大于一半的数
