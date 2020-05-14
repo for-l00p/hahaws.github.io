@@ -4,7 +4,7 @@ description: "HAHAws Blog"
 url: '' 
 baseurl: ''
 
-markdown: kramdown
+markdown: rdiscount
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
 
