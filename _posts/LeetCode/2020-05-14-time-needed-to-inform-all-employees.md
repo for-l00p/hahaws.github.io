@@ -1,3 +1,10 @@
+---
+layout: default
+title: time-needed-to-inform-all-employees
+tags: LeetCode
+---
+
+
 ## 5354. time-needed-to-inform-all-employees
 
 通知所有员工所需的时间

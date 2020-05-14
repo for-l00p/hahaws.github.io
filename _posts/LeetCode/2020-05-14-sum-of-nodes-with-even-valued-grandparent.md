@@ -1,3 +1,9 @@
+---
+layout: default
+title: sum-of-nodes-with-even-valued-grandparent
+tags: LeetCode
+---
+
 ## 1315. sum-of-nodes-with-even-valued-grandparent
 
 祖父节点值为偶数的节点和

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Reduce Array Size to The Half
+tags: LeetCode
+---
+
 ## 1338. Reduce Array Size to The Half
 
 数组大小减半

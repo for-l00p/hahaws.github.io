@@ -1,3 +1,9 @@
+---
+layout: default
+title: xor-queries-of-a-subarray
+tags: LeetCode
+---
+
 ## 1310. xor-queries-of-a-subarray
 
 子数组异或查询

@@ -1,3 +1,9 @@
+---
+layout: default
+title: find-the-smallest-divisor-given-a-threshold
+tags: LeetCode
+---
+
 ## 1283. find-the-smallest-divisor-given-a-threshold
 
 使结果不超过阈值的最小除数

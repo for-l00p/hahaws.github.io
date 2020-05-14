@@ -1,3 +1,9 @@
+---
+layout: default
+title: four-divisors
+tags: LeetCode
+---
+
 ## 1315. four-divisors
 
 四因数

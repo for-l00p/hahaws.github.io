@@ -1,3 +1,9 @@
+---
+layout: default
+title: distance-between-bus-stops
+tags: LeetCode
+---
+
 ## 1184. distance-between-bus-stops
 
 公交站间的距离

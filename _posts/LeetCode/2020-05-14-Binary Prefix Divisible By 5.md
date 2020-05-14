@@ -1,3 +1,9 @@
+---
+layout: default
+title: Binary Prefix Divisible By 5
+tags: LeetCode
+---
+
 ### 1018. Binary Prefix Divisible By 5
 
 ### Description
