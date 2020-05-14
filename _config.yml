@@ -1,4 +1,6 @@
 name: "HAHAws Blog"
+author: "HAHAws"
+email: "haha-ws@outlook.com"
 description: "HAHAws Blog"
 
 url: '' 
@@ -6,7 +8,7 @@ baseurl: ''
 
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-highlighter: pygments
+highlighter: rouge
 
 kramdown:
   input: GFM
@@ -14,6 +16,7 @@ kramdown:
 
 plugins:
   - jekyll-paginate
+  - jekyll-seo-tag
 paginate: 10
 paginate_path: /page-:num
 
