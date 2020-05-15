@@ -4,13 +4,13 @@ body {
   font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
   line-height: 1.5em;
   margin: auto;
-  max-width: 42em;
   padding: 1em;
   background: #fefefe;
 }
 
 .highlight {
-    background-color: #ff0000;
+    margin-left:1em;
+    background-color: #f0f0f0;
 }
 
 .highlight .c { color: #999988; font-style: italic } /* Comment */
