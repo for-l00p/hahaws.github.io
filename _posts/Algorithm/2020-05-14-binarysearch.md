@@ -51,9 +51,8 @@ int binarySearch(vector<int>& nums, int start, int end, int target)
     else
         return binarySearch(nums, start, mid - 1);
 }
-```
 
-```cpp
+
 // 循环
 int binarySearch(vector<int>& nums, int target)
 {
