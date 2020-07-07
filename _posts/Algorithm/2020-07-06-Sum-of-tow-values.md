@@ -10,7 +10,7 @@ tags: Algorithm
 
 [problem site](https://cses.fi/problemset/task/1643)
 
-There a array of n intergers without sorted.
+There is an array of n intergers without sorted.
 
 Find the maximum sum of subarray
 
@@ -18,7 +18,7 @@ Find the maximum sum of subarray
 
 Assume that the array is [a1, a2, a3, a4, a5]
 
-We assume that the maximum sum of subarray which is end of a[n] is msf,and the maximum sum of hole array is ans.
+We assumed that the maximum sum of subarray which is end of a[n] is msf, and the maximum sum of hole array is ans.
 
 When array is `[a1]`:
 
@@ -33,7 +33,7 @@ msf = max(a2, a2+msf(a1))
 ans = max(ans([a1]), msf(a2))
 ```
 
-So that when arary is `[a1, a2, a3, a4, a5]`:
+So when arary is `[a1, a2, a3, a4, a5]`:
 
 ```
 msf = max(a5, a5+msf(a4))
