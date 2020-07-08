@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 162. Room Allocation
+title: cses.1164. Room Allocation
 tags: LeetCode
 ---
 
