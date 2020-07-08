@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 162. find-peak-element
+title: 162. Room Allocation
 tags: LeetCode
 ---
 
